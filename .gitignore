@@ -1,2 +1,7 @@
 bundle/
 .netrw*
+.netr*
+.net*
+*swp
+*swo
+*~
