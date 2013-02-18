@@ -5,12 +5,15 @@ call vundle#rc()
 
 Bundle 'vundle'
 Bundle 'tpope/vim-rails.git'
+Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+Bundle 'git://github.com/vim-scripts/ruby-matchit.git'
+Bundle 'git://github.com/tpope/vim-endwise.git'
+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
 Bundle 'tpope/vim-haml.git'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary.git'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tsaleh/vim-supertab.git'
-Bundle 'The-NERD-Commenter'
-"Bundle 'golden-ratio'
+Bundle 'ervandew/supertab.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'bronson/vim-trailing-whitespace.git'
 Bundle 'vim-scripts/taglist.vim.git'
@@ -22,6 +25,10 @@ Bundle 'TinyBufferExplorer'
 Bundle 'slimv.vim'
 Bundle 'Railscasts-Theme-GUIand256color'
 Bundle 'bbommarito/vim-slim.git'
+Bundle 'niquola/vim-pg.git'
+Bundle 'mileszs/ack.vim.git'
+Bundle 'niquola/vim-hl7.git'
+Bundle 'wuxb45/ADL.git'
 
 filetype plugin indent on     " required!
 
@@ -47,9 +54,15 @@ nmap cd :cd %:h<cr>
 set tags+=gems.tags
 set tags+=tags
 if filereadable('.localvim')
-so .localvim
+  so .localvim
 endif
 command! -nargs=+ G execute 'silent grep! <args>' | copen 42
-"colorscheme twilight256
+colorscheme twilight256
 colorscheme railscasts
-map \t :!bundle exec rspec --drb %<cr>
+map \t :!bundle exec rspec %<cr>
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:netrw_list_hide= '.*\.swp$,\~$'
+set nowrap
+autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd User Rails exe 'source ' .
+      \ fnameescape(rails#app().path('local.vim'))
