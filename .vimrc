@@ -29,6 +29,8 @@ Bundle 'niquola/vim-pg.git'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'niquola/vim-hl7.git'
 Bundle 'wuxb45/ADL.git'
+Bundle 'kien/ctrlp.vim.git'
+Bundle 'tpope/vim-dispatch.git'
 
 filetype plugin indent on     " required!
 
@@ -49,6 +51,7 @@ nmap <s-f> mngg=G`n
 nmap <c-e> :e .<cr>
 nmap <s-e> :FufBuffer <cr>
 nmap \s :%s/\<<c-r>=expand("<cword>")<cr>\>/
+nmap \g :silent grep <c-r>=expand("<cword>")<cr> ~/w/m/**/*<cr> :cw<cr><c-l>
 
 nmap cd :cd %:h<cr>
 set tags+=gems.tags
