@@ -31,6 +31,9 @@ Bundle 'niquola/vim-hl7.git'
 Bundle 'wuxb45/ADL.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'tpope/vim-dispatch.git'
+Bundle 'ngmy/vim-rubocop.git'
+Bundle 'scrooloose/syntastic.git'
+Bundle 'rorymckinley/vim-rubyhash.git'
 
 filetype plugin indent on     " required!
 
