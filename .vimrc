@@ -12,7 +12,7 @@ Bundle 'tpope/vim-haml.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary.git'
 " Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'kchmck/vim-coffee-script.git'
+Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'bronson/vim-trailing-whitespace.git'
 Bundle 'vim-scripts/taglist.vim.git'
 Bundle 'vim-scripts/netrw.vim.git'
@@ -24,6 +24,7 @@ Bundle 'slimv.vim'
 Bundle 'Railscasts-Theme-GUIand256color'
 Bundle 'bbommarito/vim-slim.git'
 Bundle 'niquola/vim-pg.git'
+Bundle 'niquola/vim-every-day.git'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'niquola/vim-hl7.git'
 " Bundle 'wuxb45/ADL.git'
@@ -78,4 +79,5 @@ map \T :Dispatch rspec %<cr>
 map \t :exe "Dispatch rspec % -l " . line(".")<CR>
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:netrw_list_hide= '.*\.swp$,\~$'
+map \R :Rubocop<cr>
 set nowrap
