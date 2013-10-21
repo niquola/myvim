@@ -29,6 +29,7 @@ Bundle 'mileszs/ack.vim.git'
 Bundle 'niquola/vim-hl7.git'
 " Bundle 'wuxb45/ADL.git'
 Bundle 'kien/ctrlp.vim.git'
+Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-dispatch.git'
 Bundle 'ngmy/vim-rubocop.git'
 Bundle 'scrooloose/syntastic.git'
@@ -39,6 +40,10 @@ Bundle 'rking/vim-detailed'
 Bundle 'tpope/vim-endwise.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'ervandew/supertab.git'
+Bundle 'powerman/vim-plugin-ruscmd.git'
+Bundle 'tpope/vim-fireplace.git'
+Bundle 'tpope/vim-classpath.git'
+Bundle 'guns/vim-clojure-static.git'
 
 filetype plugin indent on     " required!
 
