@@ -75,9 +75,11 @@ command! -nargs=+ G execute 'silent grep! <args>' | copen 42
 " colorscheme twilight256
 " colorscheme railscasts
 colorscheme detailed
-map \T :Dispatch rspec %<cr>
-map \t :exe "Dispatch rspec % -l " . line(".")<CR>
+map \T :Dispatch rspec -X %<cr>
+map \t :exe "Dispatch rspec -X % -l " . line(".")<CR>
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:netrw_list_hide= '.*\.swp$,\~$'
 map \R :Rubocop<cr>
+map \rl :RememberSpecLine<cr>
+map \rr :RunSpecLine<cr>
 set nowrap
