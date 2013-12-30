@@ -20,9 +20,8 @@ Bundle 'vim-scripts/netrw.vim.git'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'TinyBufferExplorer'
-Bundle 'slimv.vim'
 Bundle 'Railscasts-Theme-GUIand256color'
-Bundle 'bbommarito/vim-slim.git'
+" Bundle 'bbommarito/vim-slim.git'
 Bundle 'niquola/vim-pg.git'
 Bundle 'niquola/vim-every-day.git'
 Bundle 'mileszs/ack.vim.git'
@@ -41,9 +40,11 @@ Bundle 'tpope/vim-endwise.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'ervandew/supertab.git'
 Bundle 'powerman/vim-plugin-ruscmd.git'
+Bundle 'slimv.vim'
 Bundle 'tpope/vim-fireplace.git'
 Bundle 'tpope/vim-classpath.git'
 Bundle 'guns/vim-clojure-static.git'
+Bundle "pangloss/vim-javascript"
 
 filetype plugin indent on     " required!
 
@@ -82,9 +83,18 @@ command! -nargs=+ G execute 'silent grep! <args>' | copen 42
 colorscheme detailed
 map \T :Dispatch rspec -X %<cr>
 map \t :exe "Dispatch rspec -X % -l " . line(".")<CR>
+map \S :Dispatch spring rspec -X %<cr>
+map \s :exe "Dispatch spring rspec -X % -l " . line(".")<CR>
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:netrw_list_hide= '.*\.swp$,\~$'
 map \R :Rubocop<cr>
 map \rl :RememberSpecLine<cr>
 map \rr :RunSpecLine<cr>
 set nowrap
+
+" grep 'FHIRValueSets' **/*
+" 4251  sed -i 's/FHIRValueSets/Terrminology/g' **/*(.)
+" 4253  sed -i 's/fhir_value_sets/terrminology/g' **/*(.)
+" 4254  rename 's/fhir_value_sets/terrminology/' **/*
+
+autocmd BufWritePre * :FixWhitespace
